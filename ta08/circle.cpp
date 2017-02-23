@@ -5,8 +5,15 @@
 
 void Circle :: promptForCircle()
 {
+   promptForPoint();
+
+   cout << "Enter radius: ";
+   cin >> r;
 }
 
 void Circle :: display()
 {
+   Point :: display();
+
+   cout << " - Radius: " << getR();
 }
