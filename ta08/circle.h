@@ -20,8 +20,8 @@ class Circle : public Point {
       //setter
       void setR(float r) {this -> r = r; }
 
-      void promtForCircle();
-      void displayCircle();
+      void promptForCircle();
+      void display() const;
 };
 
 #endif
