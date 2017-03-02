@@ -18,4 +18,34 @@ class Employee {
       string getName() { return name; }
       void setName(string name) { this -> name = name; }
       void display() = 0;
+};
+
+class HourlyEmployee : public Employee
+{
+private:
+   int hourlyWage;
+   
+public:
+   int getHourlyWage() const { return hourlyWage; }
+   void setHourlyWage(int hourlyWage) { this-> hourlyWage = hourlyWage; }
+   void display()
+   {
+      cout << getName() << " - $" << getHourlyWage() << "/hour" << endl;
+   }
+   
+};
+
+class SalaryEmployee : public Employee
+{
+private:
+   int salary;
+
+public:
+   int getSalary() { return salary; }
+   void setSalary() { this-> salary = salary; }
+   void display()
+   {
+      cout << getName() << " - $" << getSalary() << "/year" << endl;
+   }
+   
 }
