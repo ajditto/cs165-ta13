@@ -48,4 +48,50 @@ public:
       cout << getName() << " - $" << getSalary() << "/year" << endl;
    }
    
-}
+};
+
+int main() {
+   Employee * e[3];
+   char letter;
+   int counter;
+
+   do{
+      cout << "Enter 'h' for hourly or 's' for salaray: ";
+
+      if (letter = 'h') {
+         string name;
+         int hourly;
+        
+         cout << "Enter the employee name: ";
+         getline (cin, name);
+         cin.ignore();
+         cout << "Enter the employee hourly wage: ";
+         cin >> hourly;
+
+         HourlyEmployee * h = new HourlyEmployee;
+         h -> setName(name);
+         h -> setHourlyWage(hourly);
+         e[counter] = h;
+
+         couter++;
+      }
+      else if (letter = 's') {
+         string name;
+         int salary;
+        
+         cout << "Enter the employee name: ";
+         getline (cin, name);
+         cin.ignore();
+         cout << "Enter the employee yearly salary: ";
+         cin >> salary
+
+         SalaryEmployee * s = new SalaryEmployee;
+         h -> setName(name);
+         h -> setSalary(hourly);
+         e[counter] = s;
+
+         couter++;
+      }
+   while (counter < 3);
+ 
+   
