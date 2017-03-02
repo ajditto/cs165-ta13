@@ -17,7 +17,7 @@ class Employee {
    public:
       string getName() { return name; }
       void setName(string name) { this -> name = name; }
-      void display() = 0;
+      virtual void display() = 0;
 };
 
 class HourlyEmployee : public Employee
@@ -42,7 +42,7 @@ private:
 
 public:
    int getSalary() { return salary; }
-   void setSalary() { this-> salary = salary; }
+   void setSalary(int salary) { this-> salary = salary; }
    void display()
    {
       cout << getName() << " - $" << getSalary() << "/year" << endl;
@@ -57,14 +57,14 @@ int main() {
 
    do{
       cout << "Enter 'h' for hourly or 's' for salaray: ";
+      cin >> letter;
 
-      if (letter = 'h') {
+      if (letter == 'h') {
          string name;
          int hourly;
         
          cout << "Enter the employee name: ";
-         getline (cin, name);
-         cin.ignore();
+         cin >> name;
          cout << "Enter the employee hourly wage: ";
          cin >> hourly;
 
@@ -73,25 +73,32 @@ int main() {
          h -> setHourlyWage(hourly);
          e[counter] = h;
 
-         couter++;
+         counter++;
       }
-      else if (letter = 's') {
+      else if (letter == 's') {
          string name;
          int salary;
         
          cout << "Enter the employee name: ";
-         getline (cin, name);
-         cin.ignore();
+         cin >> name;
          cout << "Enter the employee yearly salary: ";
-         cin >> salary
+         cin >> salary;
 
          SalaryEmployee * s = new SalaryEmployee;
-         h -> setName(name);
-         h -> setSalary(hourly);
+         s -> setName(name);
+         s -> setSalary(salary);
          e[counter] = s;
 
-         couter++;
+         counter++;
       }
+   }
    while (counter < 3);
  
-   
+   for (int i = 0; i < 3; i++) {
+      e[i] -> display();
+   }
+
+   for (int i = 0; i < 3; i++) {
+      delete e[i];
+   }
+}
