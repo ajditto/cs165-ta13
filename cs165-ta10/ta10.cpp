@@ -16,4 +16,40 @@ void displayNumbers(vector<int*> &numbs);
 void removeOdds(vector<int*> &numbs);
 
 int main() {
+   vector<int*> numbs;
+   
+   promptNumber(numbs);
+
+   //removeOdds(numbs);
+
+   displayNumbers(numbs);
+
+   return 0;
+}
+
+void promptNumbers(vector<int*> &numbs)
+{
+   int input;
+   
+   do
+   {
+      cout << "Enter number: ";
+      cin >> input;
+
+      if (input != 0)
+      {
+         numbs.push_back(input);
+      }
+   }
+   
+   while(numbs != 0)
+}
+
+void displayNumbers(vector<int*> &numbs)
+{
+   
+}
+
+void removeOdds(vector<int*> &numbs)
+{
 }
