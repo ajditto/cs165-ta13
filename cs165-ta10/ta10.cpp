@@ -11,23 +11,25 @@
 using namespace std;
 
 
-void promptNumbers (vector<int*> &numbs);
-void displayNumbers(vector<int*> &numbs);
-void removeOdds(vector<int*> &numbs);
+void promptNumbers (vector<int> &numbs);
+void displayNumbers(vector<int> &numbs);
+void removeOdds(vector<int> &numbs);
 
 int main() {
-   vector<int*> numbs;
+   vector<int> numbs;
    
-   promptNumber(numbs);
+   promptNumbers(numbs);
 
-   //removeOdds(numbs);
+   displayNumbers(numbs);
+
+   removeOdds(numbs);
 
    displayNumbers(numbs);
 
    return 0;
 }
 
-void promptNumbers(vector<int*> &numbs)
+void promptNumbers(vector<int> &numbs)
 {
    int input;
    
@@ -42,14 +44,29 @@ void promptNumbers(vector<int*> &numbs)
       }
    }
    
-   while(numbs != 0)
+   while(input != 0);
 }
 
-void displayNumbers(vector<int*> &numbs)
+void displayNumbers(vector<int> &numbs)
 {
+   cout << "Then numbers are:\n";
+   for (vector<int> :: iterator it = numbs.begin(); it != numbs.end(); it++) {
+      cout << *it << endl;
+   }
    
 }
 
-void removeOdds(vector<int*> &numbs)
+void removeOdds(vector<int> &numbs)
 {
+   vector<int> :: iterator it = numbs.begin();
+
+   while (it != numbs.end()) {
+      if (*it % 2 != 0) {
+         it = numbs.erase(it);
+      }
+      else {
+         it ++;
+      }
+   }
 }
+
