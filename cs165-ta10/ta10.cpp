@@ -6,4 +6,14 @@
  * Authors:
  * 	Andrew Ditto and Dylan Bullock
  *****************************************************************************/
+#include <iostream>
+#include <vector>
+using namespace std;
 
+
+void promptNumbers (vector<int*> &numbs);
+void displayNumbers(vector<int*> &numbs);
+void removeOdds(vector<int*> &numbs);
+
+int main() {
+}
