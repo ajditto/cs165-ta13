@@ -26,8 +26,32 @@ public:
 
    int getItem(int index) { return data[index]; }
    void addItem(int item) {
+
+      if(currentAddIndex == capacity)
+      {        
+         int capacity *= 2;
+         int *newData;
+
+         *newData = new int[capacity];
+
+         for(int i = 0; i < currentAddIndex; i++)
+         {
+            newData[i] = data[i];
+         }
+
+         delete [] data;
+
+         data = new int[capacity];
+
+         for(int i = 0; i < currentAddIndex; i++)
+         {
+            data[i] = newData[i];
+         }
+      }
+
       data[currentAddIndex] = item;
       currentAddIndex += 1;
+      
    }
 };
 
