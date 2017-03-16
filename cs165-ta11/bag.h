@@ -29,10 +29,10 @@ public:
 
       if(currentAddIndex == capacity)
       {        
-         int capacity *= 2;
+         capacity *= 2;
          int *newData;
 
-         *newData = new int[capacity];
+         newData = new int[capacity];
 
          for(int i = 0; i < currentAddIndex; i++)
          {

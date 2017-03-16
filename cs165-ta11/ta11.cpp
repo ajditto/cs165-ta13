@@ -16,7 +16,7 @@ int main()
 	cout << "Capacity be 5: " << firstBag.getCapacity() << endl;
 	cout << "Item[1] should be 8: " << firstBag.getItem(1) << endl;
 	
-	/*
+
 	// PART II
 	Bag secondBag;
 	cout << "---PART II---" << endl;
@@ -33,7 +33,7 @@ int main()
 	cout << "Count should be 6: " << secondBag.getCount() << endl;
 	cout << "Capacity be 10: " << secondBag.getCapacity() << endl;
 	cout << "Item[5] should be 6: " << secondBag.getItem(5) << endl;
-	*/
+
 
 	/*
 	//PART III
