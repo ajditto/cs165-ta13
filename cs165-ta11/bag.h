@@ -5,34 +5,46 @@
  * Class: Bag
  * Description: Holds ints...for now
  ***********************************************************/
+template <class T>
 class Bag
 {
 private:
    int capacity;
    int size;
    int currentAddIndex;
-   int* data;
+   T* data;
 
 public:
-   Bag() {
-      data = new int[5];
-      capacity = 5;
-      currentAddIndex = 0;
-   }
+   Bag();
 				
    // Getters
    int getCapacity() { return capacity; }
    int getCount() { return currentAddIndex; }
 
-   int getItem(int index) { return data[index]; }
-   void addItem(int item) {
+   T getItem(int index);
+   void addItem(T item);
+};
+
+template <class T>
+Bag<T> :: Bag() {
+      data = new T[5];
+      capacity = 5;
+      currentAddIndex = 0;
+   }
+				
+   // Getters
+   template <class T>
+   T Bag<T> :: getItem(int index) { return data[index]; }
+   
+   template <class T>
+   void Bag<T> :: addItem(T item) {
 
       if(currentAddIndex == capacity)
       {        
          capacity *= 2;
-         int *newData;
+         T *newData;
 
-         newData = new int[capacity];
+         newData = new T[capacity];
 
          for(int i = 0; i < currentAddIndex; i++)
          {
@@ -41,7 +53,7 @@ public:
 
          delete [] data;
 
-         data = new int[capacity];
+         data = new T[capacity];
 
          for(int i = 0; i < currentAddIndex; i++)
          {
@@ -53,7 +65,6 @@ public:
       currentAddIndex += 1;
       
    }
-};
-
 #endif
+
 
