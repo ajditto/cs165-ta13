@@ -14,14 +14,21 @@ private:
    int* data;
 
 public:
-   Bag(); // Default constructor
+   Bag() {
+      data = new int[5];
+      capacity = 5;
+      currentAddIndex = 0;
+   }
 				
    // Getters
-   int getCapacity();
-   int getCount();
+   int getCapacity() { return capacity; }
+   int getCount() { return currentAddIndex; }
 
-   int getItem(int index);
-   void addItem(int item);
+   int getItem(int index) { return data[index]; }
+   void addItem(int item) {
+      data[currentAddIndex] = item;
+      currentAddIndex += 1;
+   }
 };
 
 #endif
