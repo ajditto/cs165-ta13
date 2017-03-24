@@ -22,6 +22,9 @@ public:
     **************************/
    void prompt();
    void display() const;
+
+   friend Velocity operator + (const Velocity & lhs, const Velocity & rhs);
+   friend Velocity & operator += (Velocity & lhs, const Velocity & rhs);
 };
 
 #endif
