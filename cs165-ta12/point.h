@@ -14,6 +14,8 @@
 
 #include <iostream>
 
+#include "velocity.h"
+
 /*********************************************
  * POINT
  * A single position.  
@@ -35,6 +37,8 @@ public:
    void setY(float y);
    void addX(float dx)      { setX(getX() + dx);     }
    void addY(float dy)      { setY(getY() + dy);     }
+   friend Point operator += (Point & lhs, const Velocity & rhs);
+
 
 private:
    float x;           // horizontal position
