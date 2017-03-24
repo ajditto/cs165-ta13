@@ -29,7 +29,6 @@ void partI(const Velocity &v1, const Velocity &v2)
 
 void partII(const Velocity &v1, const Velocity &v2)
 {
-/*
    Velocity v3 = v1 - v2;
    
    cout << "v1 - v2 = ";
@@ -43,7 +42,6 @@ void partII(const Velocity &v1, const Velocity &v2)
    cout << endl;
 
    cout << endl;
-*/
 }
 
 void partIII(const Velocity &v1, const Velocity &v2)

@@ -23,7 +23,7 @@ Velocity operator - (const Velocity & lhs, const Velocity & rhs)
    Velocity out;
 
    out.dx = lhs.dx - rhs.dx;
-   out.dy = lhs.dy - rhs.dy:
+   out.dy = lhs.dy - rhs.dy;
 
    return out;
 }
