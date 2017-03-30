@@ -1,5 +1,3 @@
-0;136;0c// course.cpp
-
 #include "course.h"
 #include <string>
 #include <iostream>
@@ -13,8 +11,18 @@ Course::Course(int size)
    classList = new Student [size];
 }
 
+Course :: Course (const Course & rhs) {
+   this -> size = rhs.size;
+   this -> name = rhs.name;
 
-Course::~Course()
+   classList = new Student [this -> size];
+
+   for (int i = 0; i < this -> size; i++) {
+      classList[i] = rhs.classList[i];
+   }
+}
+
+Course:: ~Course()
 {
    cout << "Cleaning up course: " << getName() << ".\n";
    
@@ -25,6 +33,7 @@ Course::~Course()
       classList = '\0';
    }
 }
+
 
 Student Course::getStudent(int index) const
 {
@@ -48,3 +57,18 @@ void Course::displayList() const
    }
 }
 
+Course & Course :: operator = (const Course & lhs) {
+   if (classList != NULL) {
+      delete [] classList;
+      classList = NULL;
+   }
+  
+   size = lhs.size;
+   classList = new Student [size];
+
+   for (int i = 0; i < size; i++) {
+      classList[i] = lhs.classList[i];
+   }
+   
+   return *this;
+}

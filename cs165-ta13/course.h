@@ -15,7 +15,7 @@ private:
 
 public:
    Course(int size);
-
+   Course(const Course & rhs);
    ~Course();
 
    std::string getName() const { return name; }
@@ -29,6 +29,7 @@ public:
 
    void displayList() const;
 
+   Course & operator = (const Course & lhs);
 };
 
 #endif
