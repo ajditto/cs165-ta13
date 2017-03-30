@@ -1,4 +1,4 @@
-// course.cpp
+0;136;0c// course.cpp
 
 #include "course.h"
 #include <string>
@@ -11,6 +11,19 @@ Course::Course(int size)
    this -> size = size;
 
    classList = new Student [size];
+}
+
+
+Course::~Course()
+{
+   cout << "Cleaning up course: " << getName() << ".\n";
+   
+   if(classList != NULL)
+   {
+      delete [] classList;
+
+      classList = '\0';
+   }
 }
 
 Student Course::getStudent(int index) const
